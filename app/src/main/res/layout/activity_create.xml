@@ -18,5 +18,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hat"/>
 
+    <ImageView
+        android:id="@+id/shirt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="196dp"
+        android:contentDescription="@string/appbar_scrolling_view_behavior"
+        android:onClick="launchShirtActivity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/shirt" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
