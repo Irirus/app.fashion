@@ -16,6 +16,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".HatActivity"/>
         <activity android:name=".ShirtActivity"/>
+        <activity android:name=".TrousersActivity"/>
         <activity android:name=".CreateActivity"/>
         <activity android:name=".WebView6" />
         <activity android:name=".WebView5" />
