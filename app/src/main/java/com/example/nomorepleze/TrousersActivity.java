@@ -15,17 +15,17 @@ import java.util.ArrayList;
 
 public class TrousersActivity extends AppCompatActivity {
 
-    private ArrayList<TrousersItem> mTrousersList;
+    private ArrayList<ListItem> mTrousersList;
 
     private RecyclerView mRecyclerView_trousers;
-    private TrousersAdapter mAdapter_trousers;
+    private Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager_trousers;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trousers);
+        setContentView(R.layout.recycleview_activity);
 
         createTrousersList();
         buildRecyclerView();
@@ -35,32 +35,32 @@ public class TrousersActivity extends AppCompatActivity {
     public void createTrousersList(){
         mTrousersList = new ArrayList<>();
 
-        mTrousersList.add(new TrousersItem(R.drawable.hatba, "Line 1", "Line 2" ));
-        mTrousersList.add(new TrousersItem(R.drawable.hatbay, "Line 3", "Line 4" ));
-        mTrousersList.add(new TrousersItem(R.drawable.hatbon, "Line 5", "Line 6" ));
-        mTrousersList.add(new TrousersItem(R.drawable.hatchin, "Line 5", "Line 6" ));
-        mTrousersList.add(new TrousersItem(R.drawable.hatmot, "Line 5", "Line 6" ));
-        mTrousersList.add(new TrousersItem(R.drawable.hatmuoi, "Line 5", "Line 6" ));
-        mTrousersList.add(new TrousersItem(R.drawable.hatnam, "Line 5", "Line 6" ));
-        mTrousersList.add(new TrousersItem(R.drawable.hatsau, "Line 5", "Line 6" ));
-        mTrousersList.add(new TrousersItem(R.drawable.hattam, "Line 5", "Line 6" ));
-        mTrousersList.add(new TrousersItem(R.drawable.hathai, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.hatba, "Line 1", "Line 2" ));
+        mTrousersList.add(new ListItem(R.drawable.hatbay, "Line 3", "Line 4" ));
+        mTrousersList.add(new ListItem(R.drawable.hatbon, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.hatchin, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.hatmot, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.hatmuoi, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.hatnam, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.hatsau, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.hattam, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.hathai, "Line 5", "Line 6" ));
     }
 
 
 
     public void buildRecyclerView(){
-        mRecyclerView_trousers = findViewById(R.id.recyclerView_trousers);
+        mRecyclerView_trousers = findViewById(R.id.recyclerView);
         mRecyclerView_trousers.setHasFixedSize(true);
         mLayoutManager_trousers = new LinearLayoutManager(this);
-        mAdapter_trousers = new TrousersAdapter(mTrousersList);
+        mAdapter = new Adapter(mTrousersList);
 
         mRecyclerView_trousers.setLayoutManager(mLayoutManager_trousers);
-        mRecyclerView_trousers.setAdapter(mAdapter_trousers);
+        mRecyclerView_trousers.setAdapter(mAdapter);
 
 
 
-        mAdapter_trousers.setOnItemClickListener(new TrousersAdapter.OnItemClickListener(){
+        mAdapter.setOnItemClickListener(new Adapter.OnItemClickListener(){
             @Override
             public void onItemClick(int position){
                 Intent intent = new Intent();

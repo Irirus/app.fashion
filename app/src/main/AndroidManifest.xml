@@ -18,6 +18,8 @@
         <activity android:name=".ShirtActivity"/>
         <activity android:name=".TrousersActivity"/>
         <activity android:name=".CreateActivity"/>
+        <activity android:name=".ShoeActivity"/>
+        <activity android:name=".BagActivity"/>
         <activity android:name=".WebView6" />
         <activity android:name=".WebView5" />
         <activity android:name=".WebView4" />

@@ -15,17 +15,17 @@ import java.util.ArrayList;
 
 public class ShirtActivity extends AppCompatActivity {
 
-    private ArrayList<ShirtItem> mShirtList;
+    private ArrayList<ListItem> mShirtList;
 
     private RecyclerView mRecyclerView_shirt;
-    private ShirtAdapter mAdapter_shirt;
+    private Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager_shirt;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shirt);
+        setContentView(R.layout.recycleview_activity);
 
         createShirtList();
         buildRecyclerView();
@@ -35,32 +35,32 @@ public class ShirtActivity extends AppCompatActivity {
     public void createShirtList(){
         mShirtList = new ArrayList<>();
 
-        mShirtList.add(new ShirtItem(R.drawable.hatba, "Line 1", "Line 2" ));
-        mShirtList.add(new ShirtItem(R.drawable.hatbay, "Line 3", "Line 4" ));
-        mShirtList.add(new ShirtItem(R.drawable.hatbon, "Line 5", "Line 6" ));
-        mShirtList.add(new ShirtItem(R.drawable.hatchin, "Line 5", "Line 6" ));
-        mShirtList.add(new ShirtItem(R.drawable.hatmot, "Line 5", "Line 6" ));
-        mShirtList.add(new ShirtItem(R.drawable.hatmuoi, "Line 5", "Line 6" ));
-        mShirtList.add(new ShirtItem(R.drawable.hatnam, "Line 5", "Line 6" ));
-        mShirtList.add(new ShirtItem(R.drawable.hatsau, "Line 5", "Line 6" ));
-        mShirtList.add(new ShirtItem(R.drawable.hattam, "Line 5", "Line 6" ));
-        mShirtList.add(new ShirtItem(R.drawable.hathai, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.hatba, "Line 1", "Line 2" ));
+        mShirtList.add(new ListItem(R.drawable.hatbay, "Line 3", "Line 4" ));
+        mShirtList.add(new ListItem(R.drawable.hatbon, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.hatchin, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.hatmot, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.hatmuoi, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.hatnam, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.hatsau, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.hattam, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.hathai, "Line 5", "Line 6" ));
     }
 
 
 
     public void buildRecyclerView(){
-        mRecyclerView_shirt = findViewById(R.id.recyclerView_shirt);
+        mRecyclerView_shirt = findViewById(R.id.recyclerView);
         mRecyclerView_shirt.setHasFixedSize(true);
         mLayoutManager_shirt = new LinearLayoutManager(this);
-        mAdapter_shirt = new ShirtAdapter(mShirtList);
+        mAdapter = new Adapter(mShirtList);
 
         mRecyclerView_shirt.setLayoutManager(mLayoutManager_shirt);
-        mRecyclerView_shirt.setAdapter(mAdapter_shirt);
+        mRecyclerView_shirt.setAdapter(mAdapter);
 
 
 
-        mAdapter_shirt.setOnItemClickListener(new ShirtAdapter.OnItemClickListener(){
+        mAdapter.setOnItemClickListener(new Adapter.OnItemClickListener(){
             @Override
             public void onItemClick(int position){
                 Intent intent = new Intent();
