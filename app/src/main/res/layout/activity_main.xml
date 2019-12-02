@@ -1,128 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity"
     android:background="#FFFFFF">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        >
     <ImageButton
         android:id="@+id/btn1"
-        android:layout_width="160dp"
-        android:layout_height="90dp"
-        android:layout_marginBottom="408dp"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
         android:contentDescription="@android:string/emptyPhoneNumber"
         android:onClick="launchWebView1"
-        app:layout_constraintBottom_toTopOf="@+id/searchbtn"
-        app:layout_constraintEnd_toStartOf="@+id/createbtn"
-        app:srcCompat="@drawable/ge" />
+        app:srcCompat="@drawable/bp" />
 
     <ImageButton
         android:id="@+id/btn3"
-        android:layout_width="160dp"
-        android:layout_height="90dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="244dp"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
         android:contentDescription="@android:string/emptyPhoneNumber"
         android:onClick="launchWebView3"
-        app:layout_constraintBottom_toTopOf="@+id/searchbtn"
-        app:layout_constraintEnd_toStartOf="@+id/createbtn"
-        app:srcCompat="@drawable/girl" />
+        app:srcCompat="@drawable/iu" />
+    </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/btn5"
-        android:layout_width="160dp"
-        android:layout_height="90dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="76dp"
-        android:contentDescription="@android:string/emptyPhoneNumber"
-        android:onClick="launchWebView5"
-        app:layout_constraintBottom_toTopOf="@+id/searchbtn"
-        app:layout_constraintEnd_toStartOf="@+id/createbtn"
-        app:srcCompat="@drawable/it" />
-
-    <ImageButton
-        android:id="@+id/searchbtn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="#FFFFFF"
-        android:layout_marginEnd="48dp"
-        android:onClick="launchSearchActivity"
-        android:text="@android:string/search_go"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/createbtn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.885"
-        app:srcCompat="@drawable/search"/>
-
-    <ImageButton
-        android:id="@+id/createbtn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="#FFFFFF"
-        android:layout_marginStart="180dp"
-        android:onClick="launchCreateActivity"
-        android:text="@android:string/copy"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.885"
-        app:srcCompat="@drawable/create"/>
-
-    <ImageButton
-        android:id="@+id/savebtn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="#FFFFFF"
-        android:onClick="launchSaveActivity"
-        android:text="@android:string/cancel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.745"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.885"
-        app:srcCompat="@drawable/save" />
-
-    <ImageButton
-        android:id="@+id/btn2"
-        android:layout_width="160dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="44dp"
-        android:contentDescription="@android:string/emptyPhoneNumber"
-        android:onClick="launchWebView2"
-        app:layout_constraintBottom_toTopOf="@+id/savebtn"
-        app:layout_constraintStart_toEndOf="@+id/btn1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.205"
-        app:srcCompat="@drawable/net" />
-
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        >
     <ImageButton
         android:id="@+id/btn4"
-        android:layout_width="160dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="44dp"
-        android:contentDescription="@android:string/emptyPhoneNumber"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
         android:onClick="launchWebView4"
-        app:layout_constraintBottom_toTopOf="@+id/savebtn"
-        app:layout_constraintStart_toEndOf="@+id/btn1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.522"
-        app:srcCompat="@drawable/tr" />
+        app:srcCompat="@drawable/nhi" />
 
     <ImageButton
         android:id="@+id/btn6"
-        android:layout_width="160dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="44dp"
-        android:contentDescription="@android:string/emptyPhoneNumber"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
         android:onClick="launchWebView6"
-        app:layout_constraintBottom_toTopOf="@+id/savebtn"
-        app:layout_constraintStart_toEndOf="@+id/btn1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.846"
-        app:srcCompat="@drawable/yi" />
+        app:srcCompat="@drawable/tshirt" />
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        >
+
+    <ImageButton
+        android:id="@+id/btn5"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:onClick="launchWebView5"
+        app:srcCompat="@drawable/somi" />
+
+    <ImageButton
+        android:id="@+id/btn2"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:onClick="launchWebView2"
+        app:srcCompat="@drawable/giolanh" />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <ImageButton
+            android:id="@+id/createbtn"
+            android:layout_width="83dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:onClick="launchCreateActivity"
+            app:srcCompat="@drawable/create" />
+
+        <ImageButton
+            android:id="@+id/savebtn"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:onClick="launchSaveActivity"
+            app:srcCompat="@drawable/save" />
+
+        <ImageButton
+            android:id="@+id/searchbtn"
+            android:layout_width="77dp"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:onClick="launchSearchActivity"
+            app:srcCompat="@drawable/search" />
+
+        <ImageButton
+            android:id="@+id/mebt"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity=""
+            android:background="#FFFFFF"
+            android:onClick="launchSaveActivity"
+            app:srcCompat="@drawable/me" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

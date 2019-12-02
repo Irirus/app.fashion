@@ -35,16 +35,16 @@ public class TrousersActivity extends AppCompatActivity {
     public void createTrousersList(){
         mTrousersList = new ArrayList<>();
 
-        mTrousersList.add(new ListItem(R.drawable.hatba, "Line 1", "Line 2" ));
-        mTrousersList.add(new ListItem(R.drawable.hatbay, "Line 3", "Line 4" ));
-        mTrousersList.add(new ListItem(R.drawable.hatbon, "Line 5", "Line 6" ));
-        mTrousersList.add(new ListItem(R.drawable.hatchin, "Line 5", "Line 6" ));
-        mTrousersList.add(new ListItem(R.drawable.hatmot, "Line 5", "Line 6" ));
-        mTrousersList.add(new ListItem(R.drawable.hatmuoi, "Line 5", "Line 6" ));
-        mTrousersList.add(new ListItem(R.drawable.hatnam, "Line 5", "Line 6" ));
-        mTrousersList.add(new ListItem(R.drawable.hatsau, "Line 5", "Line 6" ));
-        mTrousersList.add(new ListItem(R.drawable.hattam, "Line 5", "Line 6" ));
-        mTrousersList.add(new ListItem(R.drawable.hathai, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable. panttwo, "Line 1", "Line 2" ));
+        mTrousersList.add(new ListItem(R.drawable.panttwo, "Line 3", "Line 4" ));
+        mTrousersList.add(new ListItem(R.drawable.pantthree, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.pantfour, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.pantfive, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.pantsix, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.pantseven, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.panteight, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.pantnine, "Line 5", "Line 6" ));
+        mTrousersList.add(new ListItem(R.drawable.pantten, "Line 5", "Line 6" ));
     }
 
 

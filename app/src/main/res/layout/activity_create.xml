@@ -1,70 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="#A6FDFBFB"
     tools:context=".CreateActivity">
 
     <ImageView
         android:id="@+id/hat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="184dp"
-        android:layout_marginTop="136dp"
-        android:contentDescription="@string/appbar_scrolling_view_behavior"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="100dp"
         android:onClick="launchHatActivity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hat"/>
-
+        app:srcCompat="@drawable/hat" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
     <ImageView
         android:id="@+id/shirt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="196dp"
-        android:contentDescription="@string/appbar_scrolling_view_behavior"
+        android:layout_below="@+id/hat"
+        android:layout_marginLeft="100dp"
         android:onClick="launchShirtActivity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shirt" />
 
     <ImageView
+        android:id="@+id/bag"
+        android:layout_width="74dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:baselineAligned="false"
+        android:onClick="launchBagActivity"
+        app:srcCompat="@drawable/handbag" />
+
+
+</LinearLayout>
+    <ImageView
         android:id="@+id/trousers"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="304dp"
-        android:contentDescription="@string/appbar_scrolling_view_behavior"
+        android:layout_height="166dp"
+        android:layout_gravity=""
+        android:layout_below="@+id/shirt"
+        android:layout_marginLeft="85dp"
         android:onClick="launchTrousersActivity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pant" />
 
     <ImageView
         android:id="@+id/shoe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="408dp"
-        android:contentDescription="@string/appbar_scrolling_view_behavior"
+        android:layout_marginLeft="130dp"
+        android:layout_below="@id/trousers"
         android:onClick="launchShoeActivity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shoes" />
 
-    <ImageView
-        android:id="@+id/bag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="276dp"
-        android:contentDescription="@string/appbar_scrolling_view_behavior"
-        android:onClick="launchBagActivity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/handbag" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

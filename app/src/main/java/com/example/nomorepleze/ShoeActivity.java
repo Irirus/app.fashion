@@ -31,16 +31,16 @@ public class ShoeActivity extends AppCompatActivity {
     public void createShoeList(){
         mShoeList = new ArrayList<>();
 
-        mShoeList.add(new ListItem(R.drawable.hatba, "Line 1", "Line 2" ));
-        mShoeList.add(new ListItem(R.drawable.hatbay, "Line 3", "Line 4" ));
-        mShoeList.add(new ListItem(R.drawable.hatbon, "Line 5", "Line 6" ));
-        mShoeList.add(new ListItem(R.drawable.hatchin, "Line 5", "Line 6" ));
-        mShoeList.add(new ListItem(R.drawable.hatmot, "Line 5", "Line 6" ));
-        mShoeList.add(new ListItem(R.drawable.hatmuoi, "Line 5", "Line 6" ));
-        mShoeList.add(new ListItem(R.drawable.hatnam, "Line 5", "Line 6" ));
-        mShoeList.add(new ListItem(R.drawable.hatsau, "Line 5", "Line 6" ));
-        mShoeList.add(new ListItem(R.drawable.hattam, "Line 5", "Line 6" ));
-        mShoeList.add(new ListItem(R.drawable.hathai, "Line 5", "Line 6" ));
+        mShoeList.add(new ListItem(R.drawable.shoesone, "Line 1", "Line 2" ));
+        mShoeList.add(new ListItem(R.drawable.shoestwo, "Line 3", "Line 4" ));
+        mShoeList.add(new ListItem(R.drawable.shoesthree, "Line 5", "Line 6" ));
+        mShoeList.add(new ListItem(R.drawable.shoesfour, "Line 5", "Line 6" ));
+        mShoeList.add(new ListItem(R.drawable.shoesfive, "Line 5", "Line 6" ));
+        mShoeList.add(new ListItem(R.drawable.shoessix, "Line 5", "Line 6" ));
+        mShoeList.add(new ListItem(R.drawable.shoesseven, "Line 5", "Line 6" ));
+        mShoeList.add(new ListItem(R.drawable.shoeseight, "Line 5", "Line 6" ));
+        mShoeList.add(new ListItem(R.drawable.shoesnine, "Line 5", "Line 6" ));
+        mShoeList.add(new ListItem(R.drawable.shoesten, "Line 5", "Line 6" ));
     }
 
 

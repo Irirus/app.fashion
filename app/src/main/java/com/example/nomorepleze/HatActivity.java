@@ -31,16 +31,16 @@ public class HatActivity extends AppCompatActivity {
     public void createHatList(){
         mHatList = new ArrayList<>();
 
-        mHatList.add(new ListItem(R.drawable.hatba, "Line 1", "Line 2" ));
-        mHatList.add(new ListItem(R.drawable.hatbay, "Line 3", "Line 4" ));
-        mHatList.add(new ListItem(R.drawable.hatbon, "Line 5", "Line 6" ));
-        mHatList.add(new ListItem(R.drawable.hatchin, "Line 5", "Line 6" ));
-        mHatList.add(new ListItem(R.drawable.hatmot, "Line 5", "Line 6" ));
-        mHatList.add(new ListItem(R.drawable.hatmuoi, "Line 5", "Line 6" ));
-        mHatList.add(new ListItem(R.drawable.hatnam, "Line 5", "Line 6" ));
-        mHatList.add(new ListItem(R.drawable.hatsau, "Line 5", "Line 6" ));
-        mHatList.add(new ListItem(R.drawable.hattam, "Line 5", "Line 6" ));
-        mHatList.add(new ListItem(R.drawable.hathai, "Line 5", "Line 6" ));
+        mHatList.add(new ListItem(R.drawable.hatone, "Line 1", "Line 2" ));
+        mHatList.add(new ListItem(R.drawable.hattwo, "Line 3", "Line 4" ));
+        mHatList.add(new ListItem(R.drawable.hatthree, "Line 5", "Line 6" ));
+        mHatList.add(new ListItem(R.drawable.hatfour, "Line 5", "Line 6" ));
+        mHatList.add(new ListItem(R.drawable.hatfive, "Line 5", "Line 6" ));
+        mHatList.add(new ListItem(R.drawable.hatsix, "Line 5", "Line 6" ));
+        mHatList.add(new ListItem(R.drawable.hatseven, "Line 5", "Line 6" ));
+        mHatList.add(new ListItem(R.drawable.hateight, "Line 5", "Line 6" ));
+        mHatList.add(new ListItem(R.drawable.hatnine, "Line 5", "Line 6" ));
+        mHatList.add(new ListItem(R.drawable.hatten, "Line 5", "Line 6" ));
     }
 
 

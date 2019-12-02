@@ -31,16 +31,16 @@ public class BagActivity extends AppCompatActivity {
     public void createBagList(){
         mBagList = new ArrayList<>();
 
-        mBagList.add(new ListItem(R.drawable.hatba, "Line 1", "Line 2" ));
-        mBagList.add(new ListItem(R.drawable.hatbay, "Line 3", "Line 4" ));
-        mBagList.add(new ListItem(R.drawable.hatbon, "Line 5", "Line 6" ));
-        mBagList.add(new ListItem(R.drawable.hatchin, "Line 5", "Line 6" ));
-        mBagList.add(new ListItem(R.drawable.hatmot, "Line 5", "Line 6" ));
-        mBagList.add(new ListItem(R.drawable.hatmuoi, "Line 5", "Line 6" ));
-        mBagList.add(new ListItem(R.drawable.hatnam, "Line 5", "Line 6" ));
-        mBagList.add(new ListItem(R.drawable.hatsau, "Line 5", "Line 6" ));
-        mBagList.add(new ListItem(R.drawable.hattam, "Line 5", "Line 6" ));
-        mBagList.add(new ListItem(R.drawable.hathai, "Line 5", "Line 6" ));
+        mBagList.add(new ListItem(R.drawable.bagone, "Line 1", "Line 2" ));
+        mBagList.add(new ListItem(R.drawable.bagtwo, "Line 3", "Line 4" ));
+        mBagList.add(new ListItem(R.drawable.bagthree, "Line 5", "Line 6" ));
+        mBagList.add(new ListItem(R.drawable.bagfour, "Line 5", "Line 6" ));
+        mBagList.add(new ListItem(R.drawable.bagfive, "Line 5", "Line 6" ));
+        mBagList.add(new ListItem(R.drawable.bagsix, "Line 5", "Line 6" ));
+        mBagList.add(new ListItem(R.drawable.bagseven, "Line 5", "Line 6" ));
+        mBagList.add(new ListItem(R.drawable.bageight, "Line 5", "Line 6" ));
+        mBagList.add(new ListItem(R.drawable.bagnine, "Line 5", "Line 6" ));
+        mBagList.add(new ListItem(R.drawable.bagten, "Line 5", "Line 6" ));
     }
 
 

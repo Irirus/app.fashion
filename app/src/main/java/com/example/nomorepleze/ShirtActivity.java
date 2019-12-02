@@ -35,16 +35,16 @@ public class ShirtActivity extends AppCompatActivity {
     public void createShirtList(){
         mShirtList = new ArrayList<>();
 
-        mShirtList.add(new ListItem(R.drawable.hatba, "Line 1", "Line 2" ));
-        mShirtList.add(new ListItem(R.drawable.hatbay, "Line 3", "Line 4" ));
-        mShirtList.add(new ListItem(R.drawable.hatbon, "Line 5", "Line 6" ));
-        mShirtList.add(new ListItem(R.drawable.hatchin, "Line 5", "Line 6" ));
-        mShirtList.add(new ListItem(R.drawable.hatmot, "Line 5", "Line 6" ));
-        mShirtList.add(new ListItem(R.drawable.hatmuoi, "Line 5", "Line 6" ));
-        mShirtList.add(new ListItem(R.drawable.hatnam, "Line 5", "Line 6" ));
-        mShirtList.add(new ListItem(R.drawable.hatsau, "Line 5", "Line 6" ));
-        mShirtList.add(new ListItem(R.drawable.hattam, "Line 5", "Line 6" ));
-        mShirtList.add(new ListItem(R.drawable.hathai, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.shirtone, "Line 1", "Line 2" ));
+        mShirtList.add(new ListItem(R.drawable.shirttwo, "Line 3", "Line 4" ));
+        mShirtList.add(new ListItem(R.drawable.shirtthree, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.shirtfour, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.shirtfive, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.shirtsix, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.shirtseven, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.shirteight, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.shirtnine, "Line 5", "Line 6" ));
+        mShirtList.add(new ListItem(R.drawable.shirtten, "Line 5", "Line 6" ));
     }
 
 
