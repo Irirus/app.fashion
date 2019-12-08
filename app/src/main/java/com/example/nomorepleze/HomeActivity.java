@@ -1,21 +1,26 @@
 package com.example.nomorepleze;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.accounts.Account;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class HomeActivity extends AppCompatActivity {
 
 
     private static final String LOG_TAG = HomeActivity.class.getSimpleName();
-
     private static final String TAG = "HomeActivity";
 
-    //private ArrayList<String> mNames = new ArrayList<>();
-    //private ArrayList<String> mImageUrls = new ArrayList<>();
+    private FirebaseUser mUser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +28,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Log.d(TAG, "onCreate: started.");
 
+        mUser = FirebaseAuth.getInstance().getCurrentUser();
     }
-
-
     
     public void launchSearchActivity(View view) {
         Log.d(LOG_TAG, "Button Clicked!");
@@ -40,15 +44,29 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void launchSaveActivity(View view) {
-        Log.d(LOG_TAG, "Button Clicked!");
-        Intent intentsave = new Intent (this, SaveActivity.class);
-        startActivity(intentsave);
+        if (mUser != null) {
+            Log.d(LOG_TAG, "Button Clicked!");
+            Intent intentsave = new Intent(this, SaveActivity.class);
+            startActivity(intentsave);
+        }
+        else
+        {
+            Toast.makeText(HomeActivity.this, "You have to sign in first!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void launchAccountActivity(View view) {
-        Log.d(LOG_TAG, "Button Clicked!");
-        Intent intentaccount = new Intent (this, LoginActivity.class);
-        startActivity(intentaccount);
+
+        if (mUser != null) {
+            Log.d(LOG_TAG, "Button Clicked!");
+            Intent intentaccount = new Intent(this, AccountActivity.class);
+            startActivity(intentaccount);
+        }
+        else {
+            Log.d(LOG_TAG, "Button Clicked!");
+            Intent intentsignin = new Intent(this, LoginActivity.class);
+            startActivity(intentsignin);
+        }
     }
 
     public void launchWebView1(View view) {

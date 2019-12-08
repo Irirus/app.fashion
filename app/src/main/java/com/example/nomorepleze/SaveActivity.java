@@ -13,6 +13,8 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,6 +39,9 @@ public class SaveActivity extends AppCompatActivity implements ImageAdapter.OnIt
     private ValueEventListener mDBListener;
     private List<Upload> mUploads;
 
+    private FirebaseUser mUser;
+    private String Uid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +59,11 @@ public class SaveActivity extends AppCompatActivity implements ImageAdapter.OnIt
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(SaveActivity.this);
 
+        mUser = FirebaseAuth.getInstance().getCurrentUser();
+        Uid = mUser.getUid();
+
         mStorage = FirebaseStorage.getInstance();
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference(Uid);
         mDBListener = mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -77,6 +85,7 @@ public class SaveActivity extends AppCompatActivity implements ImageAdapter.OnIt
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(SaveActivity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
                 mProgressBar.setVisibility(View.INVISIBLE);
+
             }
         });
     }

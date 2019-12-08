@@ -31,6 +31,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -64,6 +66,8 @@ public class CreateActivity extends AppCompatActivity {
     ImageView imageShoe;
     ImageView imageBag;
 
+    private FirebaseUser mUser;
+    private String Uid;
 
     private ImageView mShoot;
 
@@ -88,50 +92,54 @@ public class CreateActivity extends AppCompatActivity {
         imageBag = findViewById(R.id.bag);
         mShoot = findViewById(R.id.shoot);
 
-        Random rd = new Random();
-
-        mStorageRef = FirebaseStorage.getInstance().getReference("uploads/" + rd.nextInt(2000000000));
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
 
 
         mShoot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mUser = FirebaseAuth.getInstance().getCurrentUser();
 
-                View rootView = getWindow().getDecorView().findViewById(android.R.id.content);
-                Bitmap bitmap = getScreenShot(rootView);
+                if (mUser != null) {
 
-                ByteArrayOutputStream bao = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bao);
-                byte[] data = bao.toByteArray();
+                    Toast.makeText(CreateActivity.this, "Shot <3", Toast.LENGTH_SHORT).show();
 
-                UploadTask uploadTask = mStorageRef.putBytes(data);
-                uploadTask.addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle unsuccessful uploads
-                    }
-                }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        Task<Uri> uri = taskSnapshot.getStorage().getDownloadUrl();
-                        while(!uri.isComplete());
-                        Uri url = uri.getResult();
+                    Random rd = new Random();
+                    Uid = mUser.getUid();
 
-                        Upload newUpload = new Upload("", url.toString());
-                        mDatabaseRef.push().setValue(newUpload);
-                    }
-                });
+                    mStorageRef = FirebaseStorage.getInstance().getReference("uploads/" + rd.nextInt(2000000000));
+                    mDatabaseRef = FirebaseDatabase.getInstance().getReference(Uid);
+
+                    View rootView = getWindow().getDecorView().findViewById(android.R.id.content);
+                    Bitmap bitmap = getScreenShot(rootView);
+
+                    ByteArrayOutputStream bao = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bao);
+                    byte[] data = bao.toByteArray();
+
+                    UploadTask uploadTask = mStorageRef.putBytes(data);
+                    uploadTask.addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            // Handle unsuccessful uploads
+                        }
+                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            Task<Uri> uri = taskSnapshot.getStorage().getDownloadUrl();
+                            while (!uri.isComplete()) ;
+                            Uri url = uri.getResult();
+
+                            Upload newUpload = new Upload("", url.toString());
+                            mDatabaseRef.push().setValue(newUpload);
+
+                        }
+                    });
+                } else {
+                    Toast.makeText(CreateActivity.this, "You have to sign in first!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
-
-
-    /* private String getFileExtension(Uri uri){
-        ContentResolver cR = getContentResolver();
-        MimeTypeMap mime = MimeTypeMap.getSingleton();
-        return mime.getExtensionFromMimeType(cR.getType(uri));
-    } */
 
 
 

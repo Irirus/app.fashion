@@ -52,8 +52,6 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 registerUser();
-
-                finish();
             }
         });
 
@@ -152,6 +150,8 @@ public class SignUpActivity extends AppCompatActivity {
                                     }
                                 }
                             });
+
+                            finish();
                         }
                         else {
                             Toast.makeText(SignUpActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();

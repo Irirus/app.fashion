@@ -1,5 +1,6 @@
 package com.example.nomorepleze;
 
+import android.accounts.Account;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,10 +20,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText emailId, password;
-    Button btnSignIn;
-    TextView txtSignUp;
-    FirebaseAuth mFirebaseAuth;
+    private EditText emailId, password;
+    private Button btnSignIn;
+    private TextView txtSignUp;
+    private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
@@ -36,22 +37,21 @@ public class LoginActivity extends AppCompatActivity {
         txtSignUp = findViewById(R.id.forget_login);
         btnSignIn = findViewById(R.id.signin_login);
 
+
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
-                if(mFirebaseUser != null){
-                    Toast.makeText(LoginActivity.this, "You are logged in", Toast.LENGTH_SHORT).show();
-                    //Intent i = new Intent(LoginActivity.this, HomeActivity.class);
-                    //startActivity(i);
+                FirebaseUser mUser = mFirebaseAuth.getCurrentUser();
+                if (mUser != null)
+                {
                     finish();
                 }
-                else
-                {
-                    Toast.makeText(LoginActivity.this, "Please Login!", Toast.LENGTH_SHORT).show();
+                else {
+
                 }
             }
         };
+
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,37 +59,34 @@ public class LoginActivity extends AppCompatActivity {
                 String email = emailId.getText().toString();
                 String pass = password.getText().toString();
 
-                if(!(email.isEmpty() && pass.isEmpty())){
-                    mFirebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(!task.isSuccessful()){
-                                Toast.makeText(LoginActivity.this, "Login Error! Please Login Again.", Toast.LENGTH_SHORT);
-                            }
-                            else
-                            {
-                                //Intent intentToHome = new Intent(LoginActivity.this, HomeActivity.class);
-                                finish();
-                                //startActivity(intentToHome);
-                            }
-                        }
-                    });
-                }
-                else if(email.isEmpty() && pass.isEmpty())
-                {
-                    Toast.makeText(LoginActivity.this, "Fields Are Empty!", Toast.LENGTH_SHORT);
-                }
-                else if(email.isEmpty()){
-                    emailId.setError("Please enter email ID!");
+                if (email.isEmpty()){
+                    emailId.setError("Please enter your email!");
                     emailId.requestFocus();
+                    return;
                 }
-                else if(pass.isEmpty()) {
+
+                if (pass.isEmpty()) {
                     password.setError("Please enter your password!");
                     password.requestFocus();
+                    return;
                 }
-                else{
-                    Toast.makeText(LoginActivity.this, "Error Occurred!", Toast.LENGTH_SHORT);
-                }
+
+
+                mFirebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            //Intent on = new Intent(LoginActivity.this, AccountActivity.class);
+                            //startActivity(on);
+                            Toast.makeText(LoginActivity.this, "Congratulation <3 Login Successful.", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                        else {
+                            Toast.makeText(LoginActivity.this, "Login Error! Please Login Again!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
             }
         });
 
