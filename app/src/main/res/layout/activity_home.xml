@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".HomeActivity"
     android:background="#FFFFFF">
 
     <LinearLayout
@@ -113,12 +113,12 @@
             app:srcCompat="@drawable/search" />
 
         <ImageButton
-            android:id="@+id/mebt"
+            android:id="@+id/accountbtn"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:layout_gravity=""
             android:background="#FFFFFF"
-            android:onClick="launchSaveActivity"
+            android:onClick="launchAccountActivity"
             app:srcCompat="@drawable/me" />
     </LinearLayout>
 

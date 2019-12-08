@@ -1,33 +1,26 @@
 package com.example.nomorepleze;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
 
 
-import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
 
-    private static final String LOG_TAG = MainActivity.class.getSimpleName();
+    private static final String LOG_TAG = HomeActivity.class.getSimpleName();
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "HomeActivity";
 
-    private ArrayList<String> mNames = new ArrayList<>();
-    private ArrayList<String> mImageUrls = new ArrayList<>();
+    //private ArrayList<String> mNames = new ArrayList<>();
+    //private ArrayList<String> mImageUrls = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
         Log.d(TAG, "onCreate: started.");
 
     }
@@ -50,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAG, "Button Clicked!");
         Intent intentsave = new Intent (this, SaveActivity.class);
         startActivity(intentsave);
+    }
+
+    public void launchAccountActivity(View view) {
+        Log.d(LOG_TAG, "Button Clicked!");
+        Intent intentaccount = new Intent (this, LoginActivity.class);
+        startActivity(intentaccount);
     }
 
     public void launchWebView1(View view) {
