@@ -2,7 +2,6 @@ package com.example.nomorepleze;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.accounts.Account;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +27,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Log.d(TAG, "onCreate: started.");
 
-        mUser = FirebaseAuth.getInstance().getCurrentUser();
     }
     
     public void launchSearchActivity(View view) {
@@ -44,6 +42,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void launchSaveActivity(View view) {
+        mUser = FirebaseAuth.getInstance().getCurrentUser();
         if (mUser != null) {
             Log.d(LOG_TAG, "Button Clicked!");
             Intent intentsave = new Intent(this, SaveActivity.class);
@@ -56,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void launchAccountActivity(View view) {
-
+        mUser = FirebaseAuth.getInstance().getCurrentUser();
         if (mUser != null) {
             Log.d(LOG_TAG, "Button Clicked!");
             Intent intentaccount = new Intent(this, AccountActivity.class);
