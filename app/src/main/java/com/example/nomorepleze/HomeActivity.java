@@ -1,38 +1,33 @@
 package com.example.nomorepleze;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
-import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
 
-    private static final String LOG_TAG = MainActivity.class.getSimpleName();
+    private static final String LOG_TAG = HomeActivity.class.getSimpleName();
+    private static final String TAG = "HomeActivity";
 
-    private static final String TAG = "MainActivity";
+    private FirebaseUser mUser;
 
-    private ArrayList<String> mNames = new ArrayList<>();
-    private ArrayList<String> mImageUrls = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
         Log.d(TAG, "onCreate: started.");
 
     }
-
-
     
     public void launchSearchActivity(View view) {
         Log.d(LOG_TAG, "Button Clicked!");
@@ -47,9 +42,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void launchSaveActivity(View view) {
-        Log.d(LOG_TAG, "Button Clicked!");
-        Intent intentsave = new Intent (this, SaveActivity.class);
-        startActivity(intentsave);
+        mUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (mUser != null) {
+            Log.d(LOG_TAG, "Button Clicked!");
+            Intent intentsave = new Intent(this, SaveActivity.class);
+            startActivity(intentsave);
+        }
+        else
+        {
+            Toast.makeText(HomeActivity.this, "You have to sign in first!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void launchAccountActivity(View view) {
+        mUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (mUser != null) {
+            Log.d(LOG_TAG, "Button Clicked!");
+            Intent intentaccount = new Intent(this, AccountActivity.class);
+            startActivity(intentaccount);
+        }
+        else {
+            Log.d(LOG_TAG, "Button Clicked!");
+            Intent intentsignin = new Intent(this, LoginActivity.class);
+            startActivity(intentsignin);
+        }
     }
 
     public void launchWebView1(View view) {
