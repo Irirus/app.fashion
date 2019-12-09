@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AccountActivity"></activity>
+        <activity android:name=".AccountActivity"/>
         <activity android:name=".HatActivity" />
         <activity android:name=".ShirtActivity" />
         <activity android:name=".TrousersActivity" />

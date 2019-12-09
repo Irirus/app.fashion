@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,6 +32,7 @@ public class AccountActivity extends AppCompatActivity {
                 mAuth.signOut();
                 //Intent home = new Intent(AccountActivity.this, HomeActivity.class);
                 //startActivity(home);
+                Toast.makeText(AccountActivity.this, "Remember vote for us 5 stars ^^", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
