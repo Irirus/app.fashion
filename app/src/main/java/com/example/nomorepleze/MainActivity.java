@@ -1,35 +1,40 @@
 package com.example.nomorepleze;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.accounts.Account;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import android.webkit.WebView;
 
 
-public class HomeActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
 
 
-    private static final String LOG_TAG = HomeActivity.class.getSimpleName();
-    private static final String TAG = "HomeActivity";
+    private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
-    private FirebaseUser mUser;
+    private static final String TAG = "MainActivity";
 
+    private ArrayList<String> mNames = new ArrayList<>();
+    private ArrayList<String> mImageUrls = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: started.");
 
         mUser = FirebaseAuth.getInstance().getCurrentUser();
     }
+
+
     
     public void launchSearchActivity(View view) {
         Log.d(LOG_TAG, "Button Clicked!");
@@ -44,6 +49,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void launchSaveActivity(View view) {
+<<<<<<< HEAD:app/src/main/java/com/example/nomorepleze/HomeActivity.java
         if (mUser != null) {
             Log.d(LOG_TAG, "Button Clicked!");
             Intent intentsave = new Intent(this, SaveActivity.class);
@@ -67,6 +73,11 @@ public class HomeActivity extends AppCompatActivity {
             Intent intentsignin = new Intent(this, LoginActivity.class);
             startActivity(intentsignin);
         }
+=======
+        Log.d(LOG_TAG, "Button Clicked!");
+        Intent intentsave = new Intent (this, SaveActivity.class);
+        startActivity(intentsave);
+>>>>>>> parent of 5f6b6a1... Merge branch 'master' of https://github.com/Irirus/app.fashion:app/src/main/java/com/example/nomorepleze/MainActivity.java
     }
 
     public void launchWebView1(View view) {

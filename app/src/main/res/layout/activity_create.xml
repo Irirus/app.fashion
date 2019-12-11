@@ -22,7 +22,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     >
-
     <ImageView
         android:id="@+id/shirt"
         android:layout_width="wrap_content"
@@ -40,7 +39,6 @@
         android:baselineAligned="false"
         android:onClick="launchBagActivity"
         app:srcCompat="@drawable/handbag" />
-
 
 
 </LinearLayout>
@@ -64,11 +62,6 @@
         app:srcCompat="@drawable/shoes" />
 
 
-    <ImageView
-        android:id="@+id/shoot"
-        android:layout_width="65dp"
-        android:layout_height="46dp"
-        app:srcCompat="@drawable/file" />
 
 
 </LinearLayout>
