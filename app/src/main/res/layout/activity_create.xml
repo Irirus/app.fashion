@@ -7,21 +7,22 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
-    android:background="#A6FDFBFB"
-    tools:context=".CreateActivity">
+    tools:context=".CreateActivity"
+    >
 
     <ImageView
         android:id="@+id/hat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="20dp"
         android:onClick="launchHatActivity"
         app:srcCompat="@drawable/hat" />
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     >
+
     <ImageView
         android:id="@+id/shirt"
         android:layout_width="wrap_content"
@@ -39,6 +40,7 @@
         android:baselineAligned="false"
         android:onClick="launchBagActivity"
         app:srcCompat="@drawable/handbag" />
+
 
 
 </LinearLayout>
@@ -62,6 +64,11 @@
         app:srcCompat="@drawable/shoes" />
 
 
+    <ImageView
+        android:id="@+id/shoot"
+        android:layout_width="65dp"
+        android:layout_height="46dp"
+        app:srcCompat="@drawable/file" />
 
 
 </LinearLayout>
